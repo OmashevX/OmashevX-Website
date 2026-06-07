@@ -4,7 +4,7 @@ const services = {
   roblox: {
     el: document.getElementById('roblox-status'),
     countdownEl: document.getElementById('roblox-countdown'),
-    bannedDate: new Date('2025-08-10T15:31:00'),
+    bannedDate: new Date('2026-08-10T15:31:00'),
     banDurationMonths: 6
   },
   discord: { el: document.getElementById('discord-status') },

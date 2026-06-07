@@ -17,7 +17,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-const CODIGO_VALIDACION = "VELUXE2025";
+const CODIGO_VALIDACION = "VELUXE2026";
 
 document.getElementById("add-org-btn").addEventListener("click", () => {
   const codigo = prompt("Introduce el código de validación:");
