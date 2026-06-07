@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="https://i.ibb.co/4nCC9KmB/Omashev-X.png" />
+  <meta name="description" content="OmashevX System Status.">
+  <title>Status | OmashevX</title>
+  
+  <link rel="stylesheet" href="assets/css/status.css" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo"><a href="index.html">OmashevX</a></h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">About Us</a></li>
+          <li><a href="servicios.html">Services</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="status.html" class="active">Status</a></li>
+          <li><a href="contacto.html">Contact</a></li>
+          <li><a href="alianzas.html">Partnerships</a></li>
+          <li><a href="equipo.html">Team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<main>
+  <section id="community-status">
+    <div class="status-panel glass-effect">
+      <h2 style="margin-bottom: 2rem; color: #28a745;"><i class="fas fa-check-circle"></i> Systems Operational</h2>
+
+      <div class="services-status">
+        
+        <div class="service" style="border-left: 4px solid #28a745; opacity: 1;"> 
+          <div class="service-header">
+            <span class="service-name"><i class="fas fa-gamepad"></i> Roblox</span>
+            <i class="fas fa-check-circle" id="roblox-status" style="color: #28a745; font-size: 1.5rem;"></i>
+          </div>
+          <p class="service-error" id="roblox-error" style="color: #ccc;">
+            <strong style="color: #28a745;">Status: Operational</strong><br>
+            OmashevX operations on Roblox are running smoothly.<br>
+            All game servers and features are fully accessible.
+          </p>
+        </div>
+
+        <div class="service" style="border-left: 4px solid #28a745; opacity: 1;"> 
+          <div class="service-header">
+            <span class="service-name"><i class="fab fa-discord"></i> Discord</span>
+            <i class="fas fa-check-circle" id="discord-status" style="color: #28a745; font-size: 1.5rem;"></i>
+          </div>
+          <p class="service-error" style="color: #ccc;">
+            <strong style="color: #28a745;">Status: Online</strong><br>
+            Server is currently online. Staff is active and ready to assist.
+          </p>
+        </div>
+
+        <div class="service" style="border-left: 4px solid #ffc107; opacity: 1;">
+          <div class="service-header">
+            <span class="service-name"><i class="fas fa-cube"></i> Minecraft</span>
+            <i class="fas fa-tools" id="minecraft-status" style="color: #ffc107; font-size: 1.5rem;"></i>
+          </div>
+          <p class="service-error" style="color: #ccc;">
+            <strong style="color: #ffc107;">Status: Under Maintenance</strong><br>
+            The server is currently undergoing maintenance. Please check back later.
+          </p>
+        </div>
+
+        <div class="service" style="border-left: 4px solid #28a745; opacity: 1;">
+          <div class="service-header">
+            <span class="service-name"><i class="fas fa-server"></i> Central Discord Server</span>
+            <i class="fas fa-check-circle" id="central-status" style="color: #28a745; font-size: 1.5rem;"></i>
+          </div>
+          <p class="service-error" style="color: #ccc;">
+            <strong style="color: #28a745;">Status: Operational</strong><br>
+            All central operations and bots are running normally.
+          </p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <button id="refresh-status" class="discord-btn" style="background-color: #5865F2; cursor: pointer;">Refresh Status</button>
+      </div>
+      
+      <p style="text-align: center; font-size: 0.8rem; color: #aaa; margin-top: 10px;">
+        Last update: Some systems undergoing maintenance...
+      </p>
+
+    </div>
+  </section>
+</main>
+
+  <footer>
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2026 OmashevX. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/OmashevX/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.tiktok.com/@OmashevX" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+        <a href="contacto.html">Contact Us</a>
+        <a href="privacy.html" style="color: #aaa;">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+<script src="assets/js/status.js"></script>
+</body>
+</html>

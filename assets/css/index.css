@@ -1,0 +1,449 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #111;
+  overflow-x: hidden; /* Evita scroll lateral indeseado */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* --- HEADER --- */
+header {
+  background-color: rgba(17, 17, 17, 0.95); /* Un poco transparente para efecto moderno */
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: sticky; /* Hace que el menú se quede fijo arriba al bajar */
+  top: 0;
+  z-index: 1000; /* Asegura que esté siempre encima de todo */
+  backdrop-filter: blur(10px); /* Efecto borroso detrás del menú */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px; /* Un poco más ancho para que quepan tus 10 enlaces */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- LOGO --- */
+header .logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: text-shadow 0.3s ease;
+}
+
+header .logo a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+               0 0 20px rgba(88, 101, 242, 0.6); /* Brillo azulado/blanco */
+}
+
+/* --- NAVEGACIÓN (BOTONES) --- */
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 5px; /* Menos espacio entre botones para que quepan todos */
+  align-items: center;
+}
+
+nav .nav-links li {
+  position: relative;
+}
+
+nav .nav-links a {
+  font-size: 0.9rem; /* Texto un pelín más pequeño para que entre todo */
+  font-weight: 600;
+  color: #ccc; /* Gris claro por defecto */
+  padding: 8px 12px; /* Relleno fijo: NO CAMBIA al pasar el mouse */
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* Efecto Hover (Pasar el mouse) */
+nav .nav-links a:hover,
+nav .nav-links a.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo gris transparente */
+  transform: translateY(-2px); /* Se eleva un poquito */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Línea animada debajo (Opcional, si te gusta el estilo subrayado) */
+nav .nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #5865F2; /* Color Discord/Marca */
+  transition: all 0.3s ease;
+  transform: translateX(-50%); /* Centrado */
+}
+
+nav .nav-links a:hover::after,
+nav .nav-links a.active::after {
+  width: 80%; /* La línea crece al 80% del ancho del botón */
+}
+
+/* --- RESPONSIVE (Móvil y Tablets) --- */
+/* Como tienes muchos enlaces, en pantallas medianas y pequeñas hay que adaptar */
+@media (max-width: 1200px) {
+  header .container {
+    flex-direction: column; /* Pone el logo arriba y el menú abajo */
+    gap: 15px;
+  }
+
+  nav .nav-links {
+    flex-wrap: wrap; /* Permite que los botones bajen a otra línea si no caben */
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  nav .nav-links a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Hero Section */
+.hero {
+  background: url('https://via.placeholder.com/1200x500') no-repeat center center/cover;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero .content {
+  animation: fadeInUp 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.hero .btn {
+  background-color: #fff;
+  color: #111;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  border: 2px solid #fff;
+}
+
+.hero .btn:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Services Preview Section */
+#services-preview {
+  padding: 60px 20px;
+  background-color: #111;
+}
+
+#services-preview .container {
+  text-align: center;
+}
+
+#services-preview h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+#services-preview .service-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#services-preview .service-card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+#services-preview .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+}
+
+#services-preview .service-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+#services-preview .service-card p {
+  color: #bbb;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+footer .footer-links {
+  margin-top: 10px;
+}
+
+footer .footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+  color: #bbb;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #services-preview .service-cards {
+    flex-direction: column;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+/* Estilo para el botón de Discord con candado */
+.discord-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; /* Fondo blanco */
+  color: #111; /* Color oscuro para el texto */
+  padding: 6px 15px; /* Ajuste del tamaño del botón (más pequeño) */
+  font-size: 0.8rem; /* Fuente aún más pequeña */
+  border-radius: 20px; /* Bordes más pequeños */
+  border: 2px solid #fff; /* Borde blanco */
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transición */
+}
+
+.discord-btn:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff; /* Cambia a blanco al pasar el mouse */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Icono de candado */
+.lock-icon {
+  margin-left: 6px;
+  font-size: 1rem; /* Tamaño del icono más pequeño */
+  opacity: 0.5; /* Semitransparente */
+}
+
+/* Estilo del botón bloqueado */
+.discord-btn.locked {
+  background-color: #444; /* Fondo más oscuro cuando está bloqueado */
+  cursor: not-allowed; /* Deshabilita la interacción */
+}
+
+.discord-btn.locked .lock-icon {
+  opacity: 1; /* El candado se vuelve completamente visible */
+}
+
+
+
+.progress-bar {
+  width: 100%;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 15px;
+  margin-top: 10px;
+}
+
+.progress-bar .progress {
+  height: 100%;
+  background-color: #fff;
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+/* Estilo para el aviso del proyecto en desarrollo */
+#project-status {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#project-status h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#project-status p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* Efecto de hover para hacer la caja más dinámica */
+#project-status:hover {
+  background-color: #222;
+  transform: scale(1.05);
+}
+
+#project-status p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* Responde bien a pantallas pequeñas */
+@media (max-width: 768px) {
+  #project-status {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  #project-status h2 {
+    font-size: 1.5rem;
+  }
+
+  #project-status p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+/* Tarjeta del contador */
+.countdown-card {
+  background-color: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.countdown-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Aseguramos que los botones estén centrados */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

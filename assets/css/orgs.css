@@ -1,0 +1,377 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #111;
+  overflow-x: hidden; /* Evita scroll lateral indeseado */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* --- HEADER --- */
+header {
+  background-color: rgba(17, 17, 17, 0.95); /* Un poco transparente para efecto moderno */
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: sticky; /* Hace que el menú se quede fijo arriba al bajar */
+  top: 0;
+  z-index: 1000; /* Asegura que esté siempre encima de todo */
+  backdrop-filter: blur(10px); /* Efecto borroso detrás del menú */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px; /* Un poco más ancho para que quepan tus 10 enlaces */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- LOGO --- */
+header .logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: text-shadow 0.3s ease;
+}
+
+header .logo a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+               0 0 20px rgba(88, 101, 242, 0.6); /* Brillo azulado/blanco */
+}
+
+/* --- NAVEGACIÓN (BOTONES) --- */
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 5px; /* Menos espacio entre botones para que quepan todos */
+  align-items: center;
+}
+
+nav .nav-links li {
+  position: relative;
+}
+
+nav .nav-links a {
+  font-size: 0.9rem; /* Texto un pelín más pequeño para que entre todo */
+  font-weight: 600;
+  color: #ccc; /* Gris claro por defecto */
+  padding: 8px 12px; /* Relleno fijo: NO CAMBIA al pasar el mouse */
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* Efecto Hover (Pasar el mouse) */
+nav .nav-links a:hover,
+nav .nav-links a.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo gris transparente */
+  transform: translateY(-2px); /* Se eleva un poquito */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Línea animada debajo (Opcional, si te gusta el estilo subrayado) */
+nav .nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #5865F2; /* Color Discord/Marca */
+  transition: all 0.3s ease;
+  transform: translateX(-50%); /* Centrado */
+}
+
+nav .nav-links a:hover::after,
+nav .nav-links a.active::after {
+  width: 80%; /* La línea crece al 80% del ancho del botón */
+}
+
+/* --- RESPONSIVE (Móvil y Tablets) --- */
+/* Como tienes muchos enlaces, en pantallas medianas y pequeñas hay que adaptar */
+@media (max-width: 1200px) {
+  header .container {
+    flex-direction: column; /* Pone el logo arriba y el menú abajo */
+    gap: 15px;
+  }
+
+  nav .nav-links {
+    flex-wrap: wrap; /* Permite que los botones bajen a otra línea si no caben */
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  nav .nav-links a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+.organizaciones {
+  background-color: #111;
+  color: #eee;
+  padding: 3rem 1rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.organizaciones .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.organizaciones h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.organizaciones p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #bbb;
+  font-size: 1.1rem;
+}
+
+.org-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 2rem;
+}
+
+.org-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%; /* para que el card ocupe todo el alto posible */
+}
+
+.btn-join, .btn-join-disabled {
+  margin-top: auto; /* fuerza que el botón esté al fondo */
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-join {
+  background-color: #5865f2; /* Color Discord */
+  color: #fff;
+}
+
+.btn-join:hover,
+.btn-join:focus {
+  background-color: #4752c4;
+  box-shadow: 0 6px 20px rgba(71, 82, 196, 0.6);
+  outline: none;
+}
+
+.btn-join-disabled {
+  background-color: #444; /* gris oscuro para deshabilitado */
+  color: #888; /* texto gris claro */
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+
+
+
+
+.org-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+.org-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.org-card h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.org-card h3 a {
+  color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.org-card h3 a:hover {
+  color: #21a1f1;
+  text-decoration: underline;
+}
+
+.org-card p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.disabled-card {
+  position: relative;
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(100%);
+}
+
+.disabled-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.lock-icon {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.btn-join-disabled {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+.add-org-card {
+  cursor: pointer;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed #888;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.add-org-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.add-org-card .add-icon {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.add-org-card h3 {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+
+
+
+.org-form-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #222;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.org-form-modal input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.org-form-modal button {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#org-submit {
+  background-color: #5865f2;
+  color: #fff;
+}
+
+#org-cancel {
+  background-color: #555;
+  color: #fff;
+}

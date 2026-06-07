@@ -1,0 +1,289 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #111;
+  overflow-x: hidden; /* Evita scroll lateral indeseado */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* --- HEADER --- */
+header {
+  background-color: rgba(17, 17, 17, 0.95); /* Un poco transparente para efecto moderno */
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: sticky; /* Hace que el menú se quede fijo arriba al bajar */
+  top: 0;
+  z-index: 1000; /* Asegura que esté siempre encima de todo */
+  backdrop-filter: blur(10px); /* Efecto borroso detrás del menú */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px; /* Un poco más ancho para que quepan tus 10 enlaces */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- LOGO --- */
+header .logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: text-shadow 0.3s ease;
+}
+
+header .logo a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+               0 0 20px rgba(88, 101, 242, 0.6); /* Brillo azulado/blanco */
+}
+
+/* --- NAVEGACIÓN (BOTONES) --- */
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 5px; /* Menos espacio entre botones para que quepan todos */
+  align-items: center;
+}
+
+nav .nav-links li {
+  position: relative;
+}
+
+nav .nav-links a {
+  font-size: 0.9rem; /* Texto un pelín más pequeño para que entre todo */
+  font-weight: 600;
+  color: #ccc; /* Gris claro por defecto */
+  padding: 8px 12px; /* Relleno fijo: NO CAMBIA al pasar el mouse */
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* Efecto Hover (Pasar el mouse) */
+nav .nav-links a:hover,
+nav .nav-links a.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo gris transparente */
+  transform: translateY(-2px); /* Se eleva un poquito */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Línea animada debajo (Opcional, si te gusta el estilo subrayado) */
+nav .nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #5865F2; /* Color Discord/Marca */
+  transition: all 0.3s ease;
+  transform: translateX(-50%); /* Centrado */
+}
+
+nav .nav-links a:hover::after,
+nav .nav-links a.active::after {
+  width: 80%; /* La línea crece al 80% del ancho del botón */
+}
+
+/* --- RESPONSIVE (Móvil y Tablets) --- */
+/* Como tienes muchos enlaces, en pantallas medianas y pequeñas hay que adaptar */
+@media (max-width: 1200px) {
+  header .container {
+    flex-direction: column; /* Pone el logo arriba y el menú abajo */
+    gap: 15px;
+  }
+
+  nav .nav-links {
+    flex-wrap: wrap; /* Permite que los botones bajen a otra línea si no caben */
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  nav .nav-links a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos generales para la sección de servicios/contacto */
+.section.contacto {
+  padding: 5rem 1rem;
+  background-color: #111;
+  text-align: center;
+  border-top: 2px solid #444;
+}
+
+.section.contacto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.section.contacto p {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Más espacio entre los bloques principales */
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.contact-method h3 {
+  font-size: 1.75rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+/* --- TARJETAS DE REDES SOCIALES (NUEVO GRID) --- */
+.social-links {
+  display: grid;
+  /* Esto fuerza exactamente 2 columnas de igual tamaño */
+  grid-template-columns: repeat(2, 1fr);
+  /* Espacio generoso entre tarjetas */
+  gap: 25px; 
+  margin-top: 2rem;
+  /* Límite de ancho y centrado para que no se estiren demasiado */
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #222;
+  border-radius: 12px;
+  width: 100%; /* Que ocupe todo el hueco de la grilla */
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.social-card i {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- COLORES ESPECÍFICOS DE CADA RED --- */
+
+/* Discord */
+.social-card.discord-contact {
+  background-color: #5865F2;
+  border-color: #5865F2;
+}
+.social-card.discord-contact:hover { background-color: #4752c4; }
+
+/* Instagram */
+.social-card.instagram {
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+.social-card.instagram:hover { opacity: 0.9; }
+
+/* TikTok */
+.social-card.tiktok {
+  background-color: #010101;
+  border: 1px solid #333;
+}
+.social-card.tiktok:hover { background-color: #222; border-color: #00f2ea; }
+
+/* X (Twitter) */
+.social-card.x {
+  background-color: #000;
+  border: 1px solid #333;
+}
+.social-card.x:hover { background-color: #1d9bf0; border-color: #1d9bf0; }
+
+
+/* --- ESTILO PARA LA CAJA DE EMAIL --- */
+.email-box {
+  background: #222;
+  padding: 1.5rem 3rem;
+  border-radius: 10px;
+  border: 1px solid #333;
+  display: inline-block;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.email-box:hover {
+  border-color: #5865F2;
+  transform: translateY(-3px);
+}
+
+.email {
+  color: #fff;
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.email:hover {
+  color: #5865F2;
+}
+
+/* --- RESPONSIVE (Móvil) --- */
+@media (max-width: 768px) {
+  .social-links {
+    /* En móvil, 1 sola columna para que se vean grandes */
+    grid-template-columns: 1fr; 
+    max-width: 350px;
+  }
+  
+  .email {
+    font-size: 1.1rem;
+  }
+  .email-box {
+      padding: 1rem 1.5rem;
+  }
+}

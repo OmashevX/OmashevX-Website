@@ -1,0 +1,267 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #111;
+  overflow-x: hidden; /* Evita scroll lateral indeseado */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* --- HEADER --- */
+header {
+  background-color: rgba(17, 17, 17, 0.95); /* Un poco transparente para efecto moderno */
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: sticky; /* Hace que el menú se quede fijo arriba al bajar */
+  top: 0;
+  z-index: 1000; /* Asegura que esté siempre encima de todo */
+  backdrop-filter: blur(10px); /* Efecto borroso detrás del menú */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px; /* Un poco más ancho para que quepan tus 10 enlaces */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- LOGO --- */
+header .logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: text-shadow 0.3s ease;
+}
+
+header .logo a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+               0 0 20px rgba(88, 101, 242, 0.6); /* Brillo azulado/blanco */
+}
+
+/* --- NAVEGACIÓN (BOTONES) --- */
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 5px; /* Menos espacio entre botones para que quepan todos */
+  align-items: center;
+}
+
+nav .nav-links li {
+  position: relative;
+}
+
+nav .nav-links a {
+  font-size: 0.9rem; /* Texto un pelín más pequeño para que entre todo */
+  font-weight: 600;
+  color: #ccc; /* Gris claro por defecto */
+  padding: 8px 12px; /* Relleno fijo: NO CAMBIA al pasar el mouse */
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* Efecto Hover (Pasar el mouse) */
+nav .nav-links a:hover,
+nav .nav-links a.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo gris transparente */
+  transform: translateY(-2px); /* Se eleva un poquito */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Línea animada debajo (Opcional, si te gusta el estilo subrayado) */
+nav .nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #5865F2; /* Color Discord/Marca */
+  transition: all 0.3s ease;
+  transform: translateX(-50%); /* Centrado */
+}
+
+nav .nav-links a:hover::after,
+nav .nav-links a.active::after {
+  width: 80%; /* La línea crece al 80% del ancho del botón */
+}
+
+/* --- RESPONSIVE (Móvil y Tablets) --- */
+/* Como tienes muchos enlaces, en pantallas medianas y pequeñas hay que adaptar */
+@media (max-width: 1200px) {
+  header .container {
+    flex-direction: column; /* Pone el logo arriba y el menú abajo */
+    gap: 15px;
+  }
+
+  nav .nav-links {
+    flex-wrap: wrap; /* Permite que los botones bajen a otra línea si no caben */
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  nav .nav-links a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Sección Equipo - Roles */
+.section.equipo {
+  padding: 5rem 1rem;
+  background-color: #111; /* Fondo negro */
+  text-align: center;
+  color: #fff; /* Texto en blanco */
+}
+
+.section.equipo h2 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section.equipo p {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+/* Lista de roles */
+.roles-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.rol {
+  background: rgba(255, 255, 255, 0.12); /* Fondo blanco translúcido */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  padding: 2.5rem 3rem;
+  cursor: pointer;
+  transition: 
+    transform 0.3s ease, 
+    box-shadow 0.3s ease, 
+    opacity 0.3s ease, 
+    background 0.3s ease;
+  color: #fff;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  opacity: 0.95;
+  user-select: none;
+}
+
+.rol:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+
+
+/* Icono del rol */
+.rol i {
+  font-size: 2.5rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.rol:hover i {
+  color: #fff; /* Mantiene blanco el icono */
+}
+
+/* Título del rol */
+.rol h3 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Descripción del rol: oculta por defecto */
+.rol p {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-top: 0;
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+}
+
+/* Al hacer click (casilla activa), se muestra la descripción */
+.rol.active p {
+  max-height: 500px; /* Valor suficiente para el contenido */
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+
+
+/* Al hacer click (casilla activa), se muestra la descripción */
+.rol.active p {
+  max-height: 500px; /* Valor suficiente para el contenido */
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .roles-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .roles-list {
+    grid-template-columns: 1fr;
+  }
+}

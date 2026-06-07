@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="https://i.ibb.co/4nCC9KmB/Omashev-X.png" />
+  <meta name="description" content="Learn about the history, mission, and vision of OmashevX.">
+  <title>About Us | OmashevX</title>
+  
+  <link rel="stylesheet" href="assets/css/sobre.css" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    /* Estilos mejorados para las tarjetas (Glassmorphism) */
+    .valor {
+      background: rgba(30, 30, 30, 0.6); /* Fondo semi-transparente */
+      backdrop-filter: blur(10px); /* Efecto borroso */
+      padding: 2.5rem 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .valor:hover {
+      transform: translateY(-10px);
+      border-color: #5865F2; /* Color de acento */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .valor i {
+      font-size: 3rem;
+      color: #5865F2;
+      margin-bottom: 1.5rem;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .valor:hover i {
+        transform: scale(1.1) rotate(5deg);
+    }
+    
+    .valores {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 3rem;
+    }
+
+    h2 {
+        position: relative;
+        display: inline-block;
+    }
+    
+    /* Subrayado animado para el título */
+    h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #5865F2;
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo"><a href="index.html">OmashevX</a></h1>
+      <nav>
+        <ul class="nav-links">
+           <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html" class="active">About Us</a></li>
+          <li><a href="servicios.html">Services</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="status.html">Status</a></li>
+          <li><a href="contacto.html">Contact</a></li>
+          <li><a href="alianzas.html">Partnerships</a></li>
+          <li><a href="equipo.html">Team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section about">
+      <div class="container">
+        
+        <div style="text-align: center; margin-bottom: 4rem;" data-aos="fade-in">
+            <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Who are we?</h2>
+            <p style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: #ccc; font-size: 1.1rem;">
+              OmashevX was born with a clear mission: to <strong>create the ultimate structured gaming ecosystem</strong>. <br><br>
+              We are not a service agency; we are a disciplined social entity dedicated to maintaining organized, secure, and thriving digital spaces across Roblox, Discord, and Minecraft. We bridge the gap between casual gaming and professional community governance.
+            </p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #333; margin: 3rem 0; opacity: 0.5;">
+
+        <h3 style="text-align: center; font-size: 2rem; margin-bottom: 3rem;" data-aos="fade-up">Our Core Pillars</h3>
+        
+        <div class="valores">
+          <div class="valor" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-users"></i>
+            <h3>Community First</h3>
+            <p>Our heart lies in our members. We foster safe and engaging environments where players can socialize, compete, and grow within our Discord and Game Servers.</p>
+          </div>
+          
+          <div class="valor" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-handshake"></i>
+            <h3>Strategic Partnerships</h3>
+            <p>We actively collaborate with other clans and organizations to create joint events. Unity is key to our mutual success and expansion.</p>
+          </div>
+          
+          <div class="valor" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-sitemap"></i>
+            <h3>Strict Organization</h3>
+            <p>Structure is everything. Our internal departments operate under high standards of quality and discipline, ensuring a chaos-free experience.</p>
+          </div>
+
+          <div class="valor" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Total Security</h3>
+            <p>Protected by the <strong>VA Intelligence Agency</strong>. We rigorously investigate threats and enforce fair play to protect our users' integrity.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 OmashevX. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/OmashevX/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.tiktok.com/@OmashevX" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+        <a href="contacto.html">Contact Us</a>
+        <a href="privacy.html" style="color: #aaa;">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+  
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+  </script>
+</body>
+</html>
